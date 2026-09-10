@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Details</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <main class="container">
+        <header class="header-section">
+            <h1>Message Details</h1>
+        </header>
+
+        <div class="message-card">
+            <p class="message-text"><%= message.text %></p>
+            <div class="meta-group">
+                <span class="user_name">— <%= message.user %></span>
+                <span class="msg_time"><%= new Date(message.added).toLocaleString() %></span>
+            </div>
+            <a href="/" class="btn btn-secondary btn-sm">← Go back</a>
+        </div>
+    </main>
+</body>
+</html>

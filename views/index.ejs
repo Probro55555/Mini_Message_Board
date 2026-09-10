@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Message Board</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <main class="container">
+        <header class="header-section">
+            <h1>Mini Message Board</h1>
+            <a href="/new" class="btn btn-primary">Create new message</a>
+        </header>
+
+        <ul class="message_list">
+            <% messages.forEach((message, index) => { %>
+                <li class="message-card">
+                    <p class="message-text"><%= message.text %></p>
+                    <div class="meta-group">
+                        <span class="user_name">— <%= message.user %></span>
+                        <span class="msg_time"><%= new Date(message.added).toLocaleDateString() %></span>
+                    </div>
+                    <a href="/messages/<%= index %>" class="btn btn-secondary btn-sm">View individually</a>
+                </li>
+            <% }); %>
+        </ul>
+    </main>
+</body>
+</html>
